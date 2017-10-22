@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      "use strict";
+      function biggieSize(arr) {
+        for (var i in arr) {
+          if (arr[i]>0) arr[i] = 'big';
+        }
+        console.log(arr);
+      }
+
+      function previousLengths(arr) {
+        for (var i = arr.length-1; i >= 0; i--) {
+          if (arr[i-1] == undefined) {
+            arr[i] = 0;
+            continue;
+          }
+          arr[i] = arr[i-1].length;
+        }
+        console.log(arr);
+      }
+
+      function printLow(arr) {
+        var max = arr[0];
+        var min = arr[0];
+        for (var i in arr) {
+          if (arr[i] > max) max = arr[i];
+          if (arr[i] < min) min = arr[i];
+        };
+        console.log(min);
+        return(max);
+      }
+
+      function addSeven(arr) {
+        var newArr = [];
+        for (var i = 1; i < arr.length; i++) {
+          newArr[i-1] = arr[i] + 7;
+        }
+        console.log(newArr);
+      }
+
+      function reverseArr(arr) {
+        var stop = Math.floor(arr.length/2);
+        for (var i = 0; i < stop; i++) {
+          var temp = arr[i];
+          arr[i] = arr[arr.length-(i+1)];
+          arr[arr.length-(i+1)] = temp;
+        }
+        console.log(arr);
+      }
+
+      function doubleVision(arr) {
+        var newArr = [];
+        for (var i in arr) {
+          newArr.push(arr[i] * 2)
+        }
+        console.log(newArr);
+      }
+
+      function outlookNeg(arr) {
+        for (var i in arr) {
+          if (arr[i] > 0) {
+            arr[i] = arr[i] * -1;
+          }
+        }
+        console.log(arr);
+      }
+
+      function countPositives(arr) {
+        var count = 0;
+        for (var i in arr) {
+          if (arr[i] > 0) count++;
+        }
+        arr[arr.length-1] = count;
+        return arr;
+      }
+
+      function alwaysHungry(arr) {
+        var count = 0;
+        for (var i in arr) {
+          if (arr[i] === "food") {
+            console.log("yummy");
+            count++
+          }
+        }
+        if (count === 0) console.log("I'm hungry");
+      }
+
+      function evensAndOdds(arr) {
+        for (var i =0 ; i < arr.length; i++) {
+          var first = arr[i];
+          var second = arr[i+1];
+          var third = arr[i+2];
+          if (first % 2 === 1 && second % 2 === 1 && third % 2 === 1) {
+            console.log("That's odd!");
+          } else if (first % 2 === 0 && second % 2 === 0 && third % 2 === 0) {
+            console.log("Even more so!");
+          } else {
+            continue;
+          }
+        }
+      }
+
+      function swapTowards(arr) {
+        var stop = Math.floor(arr.length/2);
+        for (var i = 0; i < stop; i += 2) {
+          var temp = arr[i];
+          arr[i] = arr[arr.length-(i+1)];
+          arr[arr.length-(i+1)] = temp;
+        }
+        console.log(arr);
+      }
+
+      function incrementTheSeconds(arr) {
+        for (var i = 1; i < arr.length; i += 2) {
+          arr[i] = ++arr[i];
+          console.log (arr[i]);
+        }
+      }
+
+      function scaleTheArray(arr, num) {
+        for (var i = 0; i < arr.length; i++) {
+          arr[i] = arr[i] * num;
+        }
+        return arr;
+      }
+    </script>
+  </head>
+  <body>
+
+
+  </body>
+</html>
