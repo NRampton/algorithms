@@ -5,15 +5,15 @@
     <title></title>
     <script type="text/javascript">
       "use strict";
-      function biggieSize(arr) {
+      function biggieSize(arr) {      //changes all positive nums in arr to 'big'
         for (var i in arr) {
           if (arr[i]>0) arr[i] = 'big';
         }
         console.log(arr);
       }
 
-      function previousLengths(arr) {
-        for (var i = arr.length-1; i >= 0; i--) {
+      function previousLengths(arr) {               //changes all values in an array of strings to
+        for (var i = arr.length-1; i >= 0; i--) {   //the length value of the preceding index's string
           if (arr[i-1] == undefined) {
             arr[i] = 0;
             continue;
@@ -23,7 +23,7 @@
         console.log(arr);
       }
 
-      function printLow(arr) {
+      function printLow(arr) {              //prints the lowest value in arr, returns the hightest
         var max = arr[0];
         var min = arr[0];
         for (var i in arr) {
@@ -34,15 +34,24 @@
         return(max);
       }
 
-      function addSeven(arr) {
-        var newArr = [];
+      function addSeven(arr) {                  //produces new array, leaving out the first value
+        var newArr = [];                        //in arr and adding seven to all others
         for (var i = 1; i < arr.length; i++) {
           newArr[i-1] = arr[i] + 7;
         }
         console.log(newArr);
       }
 
-      function reverseArr(arr) {
+      function printReturn(arr) {               //prints the 2nd-to-last value, returns the first odd
+        console.log(arr[arr.length-2]);
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 === 1) {
+            return arr[i];
+          }
+        }
+      }
+
+      function reverseArr(arr) {                //reverses the values in arr
         var stop = Math.floor(arr.length/2);
         for (var i = 0; i < stop; i++) {
           var temp = arr[i];
@@ -52,7 +61,7 @@
         console.log(arr);
       }
 
-      function doubleVision(arr) {
+      function doubleVision(arr) {          //produces new array, doubling the values in arr
         var newArr = [];
         for (var i in arr) {
           newArr.push(arr[i] * 2)
@@ -60,7 +69,7 @@
         console.log(newArr);
       }
 
-      function outlookNeg(arr) {
+      function outlookNeg(arr) {      //makes all the values in arr negative
         for (var i in arr) {
           if (arr[i] > 0) {
             arr[i] = arr[i] * -1;
@@ -69,8 +78,8 @@
         console.log(arr);
       }
 
-      function countPositives(arr) {
-        var count = 0;
+      function countPositives(arr) {    //replaces last value in arr with # of positive values
+        var count = 0;                  //in arr
         for (var i in arr) {
           if (arr[i] > 0) count++;
         }
@@ -78,8 +87,8 @@
         return arr;
       }
 
-      function alwaysHungry(arr) {
-        var count = 0;
+      function alwaysHungry(arr) {    //logs out "yummy" for each instance of "food" in array
+        var count = 0;                //logs out "I'm hungry" if there are none
         for (var i in arr) {
           if (arr[i] === "food") {
             console.log("yummy");
@@ -89,8 +98,8 @@
         if (count === 0) console.log("I'm hungry");
       }
 
-      function evensAndOdds(arr) {
-        for (var i =0 ; i < arr.length; i++) {
+      function evensAndOdds(arr) {                  //logs messages for three odd or three even values
+        for (var i =0 ; i < arr.length; i++) {      //in a row
           var first = arr[i];
           var second = arr[i+1];
           var third = arr[i+2];
@@ -104,8 +113,8 @@
         }
       }
 
-      function swapTowards(arr) {
-        var stop = Math.floor(arr.length/2);
+      function swapTowards(arr) {               //swaps the values of first and last, third and
+        var stop = Math.floor(arr.length/2);    //third-to-last, etc.
         for (var i = 0; i < stop; i += 2) {
           var temp = arr[i];
           arr[i] = arr[arr.length-(i+1)];
@@ -114,14 +123,14 @@
         console.log(arr);
       }
 
-      function incrementTheSeconds(arr) {
+      function incrementTheSeconds(arr) {           //adds 1 to all odd-indexed values in arr
         for (var i = 1; i < arr.length; i += 2) {
           arr[i] = ++arr[i];
           console.log (arr[i]);
         }
       }
 
-      function scaleTheArray(arr, num) {
+      function scaleTheArray(arr, num) {            //multiplies all values in arr by num
         for (var i = 0; i < arr.length; i++) {
           arr[i] = arr[i] * num;
         }
