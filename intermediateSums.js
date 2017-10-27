@@ -2,10 +2,12 @@ function intermediateSums(arr) {
   var counter = 0;
   var length = arr.length;
   var sum = 0;
-  for (var i = arr.length-1; (i-1) %10 !== 0; i--) {
-    sum += arr[i];
+  if (arr.length % 10 !== 0) {
+    for (var i = arr.length; i %10 !== 0; i--) {
+      sum += arr[i];
+    }
+    arr[arr.length] = sum;
   }
-  arr[arr.length] = sum;
   while ( counter * 10 +1 < length) {
     sum = 0;
     for ( i = counter*10 + counter; i < (counter+1)*10 + counter; i++) {
